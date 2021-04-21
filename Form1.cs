@@ -34,26 +34,23 @@ namespace AppStoreNET
 
         private void AccLableLink_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            homePage1.Hide();
-            product1.Hide();
-            accountPage1.Show();
-            accountPage1.BringToFront();
+            homePage2.Hide();
+            accountPage2.Show();
+            accountPage2.BringToFront();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            homePage1.Show();
-            accountPage1.Hide();
-            product1.Hide();
-            homePage1.BringToFront();
+            accountPage2.Hide();
+            homePage2.Show();
+            homePage2.BringToFront();
         }
 
         private void button9_Click(object sender, EventArgs e)
         {
-            homePage1.Show();
-            accountPage1.Hide();
-            product1.Hide();
-            homePage1.BringToFront();
+            accountPage2.Hide();
+            homePage2.Show();
+            homePage2.BringToFront();
         }
     }
 }

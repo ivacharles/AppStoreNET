@@ -16,7 +16,6 @@ namespace AppStoreNET
         SqlConnection connection;
         SqlCommand selectCommmand;
         SqlDataAdapter myAdapter;
-        private Form1 Form1 = 
 
         public AccountPage()
         {
@@ -41,20 +40,32 @@ namespace AppStoreNET
             DataTable dataTable = new DataTable();
             myAdapter.Fill(dataTable);
 
-            MessageBox.Show((String)dataTable.Rows[0][0]);
 
             if (dataTable.Rows.Count == 0)
             {
-                MessageBox.Show("Something is wrong! Try again");
+                MessageBox.Show("Something is wrong with you email or password! Try again");
             }else if(((String)dataTable.Rows[0][0]).Equals(loginPwdBox.Text))
             {
-                
+                MessageBox.Show("You are now login as an Admin");
+                product1.Show();
+                product1.BringToFront();
             }
             else
             {
                 MessageBox.Show("hey!");
             }
 
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            product1.Hide();
+            
+        }
+
+        private void product1_Load(object sender, EventArgs e)
+        {
+           
         }
     }
 }

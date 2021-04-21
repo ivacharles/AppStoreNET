@@ -30,28 +30,31 @@ namespace AppStoreNET
         private void InitializeComponent()
         {
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.AccLableLink = new System.Windows.Forms.LinkLabel();
-            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
             this.panel6 = new System.Windows.Forms.Panel();
             this.linkLabel2 = new System.Windows.Forms.LinkLabel();
             this.label1 = new System.Windows.Forms.Label();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.AccLableLink = new System.Windows.Forms.LinkLabel();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.homePage1 = new AppStoreNET.homePage();
             this.accountPage1 = new AppStoreNET.AccountPage();
             this.product1 = new AppStoreNET.Product();
-            this.button9 = new System.Windows.Forms.Button();
+            this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.homePage2 = new AppStoreNET.homePage();
+            this.accountPage2 = new AppStoreNET.AccountPage();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
-            this.panel1.SuspendLayout();
+            this.flowLayoutPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tableLayoutPanel1
@@ -84,9 +87,11 @@ namespace AppStoreNET
             this.tableLayoutPanel1.Controls.Add(this.button7, 10, 2);
             this.tableLayoutPanel1.Controls.Add(this.button1, 8, 1);
             this.tableLayoutPanel1.Controls.Add(this.button8, 12, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panel1, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.panel1, 2, 0);
+            this.tableLayoutPanel1.Controls.Add(this.flowLayoutPanel1, 0, 3);
             this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 13;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
@@ -102,38 +107,82 @@ namespace AppStoreNET
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 7.692307F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 20F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(984, 561);
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 38F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1957, 1073);
             this.tableLayoutPanel1.TabIndex = 0;
+            // 
+            // button9
+            // 
+            this.button9.BackgroundImage = global::AppStoreNET.Properties.Resources.logo;
+            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.tableLayoutPanel1.SetColumnSpan(this.button9, 2);
+            this.button9.FlatAppearance.BorderSize = 0;
+            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button9.Location = new System.Drawing.Point(6, 6);
+            this.button9.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button9.Name = "button9";
+            this.tableLayoutPanel1.SetRowSpan(this.button9, 2);
+            this.button9.Size = new System.Drawing.Size(288, 152);
+            this.button9.TabIndex = 2;
+            this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
+            // 
+            // panel6
+            // 
+            this.panel6.AllowDrop = true;
+            this.panel6.AutoScroll = true;
+            this.panel6.BackColor = System.Drawing.Color.Transparent;
+            this.tableLayoutPanel1.SetColumnSpan(this.panel6, 13);
+            this.panel6.Controls.Add(this.linkLabel2);
+            this.panel6.Controls.Add(this.label1);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel6.Location = new System.Drawing.Point(6, 990);
+            this.panel6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(1945, 77);
+            this.panel6.TabIndex = 8;
+            // 
+            // linkLabel2
+            // 
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.LinkColor = System.Drawing.Color.Black;
+            this.linkLabel2.Location = new System.Drawing.Point(1124, 27);
+            this.linkLabel2.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(135, 30);
+            this.linkLabel2.TabIndex = 1;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Contact us";
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(660, 27);
+            this.label1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(404, 30);
+            this.label1.TabIndex = 0;
+            this.label1.Text = " 2021 J3I Store. All rights reserved";
             // 
             // textBox1
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tableLayoutPanel1.SetColumnSpan(this.textBox1, 6);
             this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(170, 46);
+            this.textBox1.Location = new System.Drawing.Point(344, 91);
+            this.textBox1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(427, 37);
+            this.textBox1.Size = new System.Drawing.Size(850, 67);
             this.textBox1.TabIndex = 1;
-            // 
-            // button1
-            // 
-            this.tableLayoutPanel1.SetColumnSpan(this.button1, 2);
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Location = new System.Drawing.Point(603, 46);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(144, 37);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Search";
-            this.button1.UseVisualStyleBackColor = true;
             // 
             // AccLableLink
             // 
@@ -143,9 +192,10 @@ namespace AppStoreNET
             this.AccLableLink.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.AccLableLink.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.AccLableLink.LinkColor = System.Drawing.Color.Black;
-            this.AccLableLink.Location = new System.Drawing.Point(822, 66);
+            this.AccLableLink.Location = new System.Drawing.Point(1653, 127);
+            this.AccLableLink.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.AccLableLink.Name = "AccLableLink";
-            this.AccLableLink.Size = new System.Drawing.Size(75, 20);
+            this.AccLableLink.Size = new System.Drawing.Size(141, 37);
             this.AccLableLink.TabIndex = 3;
             this.AccLableLink.TabStop = true;
             this.AccLableLink.Text = "Account";
@@ -160,9 +210,10 @@ namespace AppStoreNET
             this.linkLabel1.ForeColor = System.Drawing.Color.Black;
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel1.Location = new System.Drawing.Point(938, 66);
+            this.linkLabel1.Location = new System.Drawing.Point(1869, 127);
+            this.linkLabel1.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
             this.linkLabel1.Name = "linkLabel1";
-            this.linkLabel1.Size = new System.Drawing.Size(43, 20);
+            this.linkLabel1.Size = new System.Drawing.Size(82, 37);
             this.linkLabel1.TabIndex = 4;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Cart";
@@ -176,57 +227,13 @@ namespace AppStoreNET
             this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.Color.DarkKhaki;
             this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(3, 89);
+            this.button2.Location = new System.Drawing.Point(6, 170);
+            this.button2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(144, 37);
+            this.button2.Size = new System.Drawing.Size(288, 70);
             this.button2.TabIndex = 20;
             this.button2.Text = "Laptop";
             this.button2.UseVisualStyleBackColor = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.DarkKhaki;
-            this.tableLayoutPanel1.SetColumnSpan(this.button3, 2);
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.Location = new System.Drawing.Point(153, 89);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(144, 37);
-            this.button3.TabIndex = 21;
-            this.button3.Text = "Desktop";
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.DarkKhaki;
-            this.tableLayoutPanel1.SetColumnSpan(this.button4, 2);
-            this.button4.FlatAppearance.BorderSize = 0;
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.Location = new System.Drawing.Point(603, 89);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(144, 37);
-            this.button4.TabIndex = 22;
-            this.button4.Text = "Motherboard";
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // button5
-            // 
-            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.button5.BackColor = System.Drawing.Color.DarkKhaki;
-            this.tableLayoutPanel1.SetColumnSpan(this.button5, 2);
-            this.button5.FlatAppearance.BorderSize = 0;
-            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button5.Location = new System.Drawing.Point(453, 89);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(144, 37);
-            this.button5.TabIndex = 23;
-            this.button5.Text = "Processor";
-            this.button5.UseVisualStyleBackColor = false;
             // 
             // button6
             // 
@@ -238,12 +245,61 @@ namespace AppStoreNET
             this.button6.FlatAppearance.BorderSize = 0;
             this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button6.Location = new System.Drawing.Point(303, 89);
+            this.button6.Location = new System.Drawing.Point(606, 170);
+            this.button6.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(144, 37);
+            this.button6.Size = new System.Drawing.Size(288, 70);
             this.button6.TabIndex = 24;
             this.button6.Text = "Memory (RAM)";
             this.button6.UseVisualStyleBackColor = false;
+            // 
+            // button5
+            // 
+            this.button5.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.button5.BackColor = System.Drawing.Color.DarkKhaki;
+            this.tableLayoutPanel1.SetColumnSpan(this.button5, 2);
+            this.button5.FlatAppearance.BorderSize = 0;
+            this.button5.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button5.Location = new System.Drawing.Point(906, 170);
+            this.button5.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(288, 70);
+            this.button5.TabIndex = 23;
+            this.button5.Text = "Processor";
+            this.button5.UseVisualStyleBackColor = false;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.DarkKhaki;
+            this.tableLayoutPanel1.SetColumnSpan(this.button4, 2);
+            this.button4.FlatAppearance.BorderSize = 0;
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.Location = new System.Drawing.Point(1206, 170);
+            this.button4.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(288, 70);
+            this.button4.TabIndex = 22;
+            this.button4.Text = "Motherboard";
+            this.button4.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.DarkKhaki;
+            this.tableLayoutPanel1.SetColumnSpan(this.button3, 2);
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.Location = new System.Drawing.Point(306, 170);
+            this.button3.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(288, 70);
+            this.button3.TabIndex = 21;
+            this.button3.Text = "Desktop";
+            this.button3.UseVisualStyleBackColor = false;
             // 
             // button7
             // 
@@ -255,12 +311,26 @@ namespace AppStoreNET
             this.button7.FlatAppearance.BorderSize = 0;
             this.button7.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button7.Location = new System.Drawing.Point(753, 89);
+            this.button7.Location = new System.Drawing.Point(1506, 170);
+            this.button7.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(144, 37);
+            this.button7.Size = new System.Drawing.Size(288, 70);
             this.button7.TabIndex = 25;
             this.button7.Text = "Misc";
             this.button7.UseVisualStyleBackColor = false;
+            // 
+            // button1
+            // 
+            this.tableLayoutPanel1.SetColumnSpan(this.button1, 2);
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Location = new System.Drawing.Point(1206, 88);
+            this.button1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(288, 70);
+            this.button1.TabIndex = 2;
+            this.button1.Text = "Search";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // button8
             // 
@@ -271,64 +341,25 @@ namespace AppStoreNET
             this.button8.FlatAppearance.BorderSize = 0;
             this.button8.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button8.Location = new System.Drawing.Point(903, 89);
+            this.button8.Location = new System.Drawing.Point(1806, 170);
+            this.button8.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(78, 37);
+            this.button8.Size = new System.Drawing.Size(145, 70);
             this.button8.TabIndex = 26;
             this.button8.UseVisualStyleBackColor = false;
             // 
-            // panel6
-            // 
-            this.panel6.AllowDrop = true;
-            this.panel6.AutoScroll = true;
-            this.panel6.BackColor = System.Drawing.Color.Transparent;
-            this.tableLayoutPanel1.SetColumnSpan(this.panel6, 13);
-            this.panel6.Controls.Add(this.linkLabel2);
-            this.panel6.Controls.Add(this.label1);
-            this.panel6.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel6.Location = new System.Drawing.Point(3, 519);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(978, 39);
-            this.panel6.TabIndex = 8;
-            // 
-            // linkLabel2
-            // 
-            this.linkLabel2.AutoSize = true;
-            this.linkLabel2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.linkLabel2.LinkColor = System.Drawing.Color.Black;
-            this.linkLabel2.Location = new System.Drawing.Point(562, 14);
-            this.linkLabel2.Name = "linkLabel2";
-            this.linkLabel2.Size = new System.Drawing.Size(70, 16);
-            this.linkLabel2.TabIndex = 1;
-            this.linkLabel2.TabStop = true;
-            this.linkLabel2.Text = "Contact us";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(330, 14);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(207, 16);
-            this.label1.TabIndex = 0;
-            this.label1.Text = " 2021 J3I Store. All rights reserved";
-            // 
             // panel1
             // 
-            //////////this.tableLayoutPanel1.SetColumnSpan(this.panel1, 13);
-            //////////this.panel1.Controls.Add(this.product1);
-            //////////this.panel1.Controls.Add(this.accountPage1);
-            //////////this.panel1.Controls.Add(this.homePage1);
-            //////////this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            //////////this.panel1.Location = new System.Drawing.Point(3, 132);
-            //////////this.panel1.Name = "panel1";
-            //////////this.tableLayoutPanel1.SetRowSpan(this.panel1, 9);
-            //////////this.panel1.Size = new System.Drawing.Size(978, 381);
-            //////////this.panel1.TabIndex = 28;
+            this.panel1.Location = new System.Drawing.Point(306, 6);
+            this.panel1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(138, 70);
+            this.panel1.TabIndex = 27;
             // 
             // homePage1
             // 
             this.homePage1.Location = new System.Drawing.Point(0, 2);
+            this.homePage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.homePage1.Name = "homePage1";
             this.homePage1.Size = new System.Drawing.Size(981, 375);
             this.homePage1.TabIndex = 0;
@@ -336,6 +367,7 @@ namespace AppStoreNET
             // accountPage1
             // 
             this.accountPage1.Location = new System.Drawing.Point(1, 2);
+            this.accountPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.accountPage1.Name = "accountPage1";
             this.accountPage1.Size = new System.Drawing.Size(978, 381);
             this.accountPage1.TabIndex = 1;
@@ -343,39 +375,59 @@ namespace AppStoreNET
             // product1
             // 
             this.product1.Location = new System.Drawing.Point(0, 3);
+            this.product1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
             this.product1.Name = "product1";
             this.product1.Size = new System.Drawing.Size(978, 381);
             this.product1.TabIndex = 2;
             // 
-            // button9
+            // flowLayoutPanel1
             // 
-            this.button9.BackgroundImage = global::AppStoreNET.Properties.Resources.logo;
-            this.button9.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.tableLayoutPanel1.SetColumnSpan(this.button9, 2);
-            this.button9.FlatAppearance.BorderSize = 0;
-            this.button9.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button9.Location = new System.Drawing.Point(3, 3);
-            this.button9.Name = "button9";
-            this.tableLayoutPanel1.SetRowSpan(this.button9, 2);
-            this.button9.Size = new System.Drawing.Size(144, 80);
-            this.button9.TabIndex = 2;
-            this.button9.UseVisualStyleBackColor = true;
-            this.button9.Click += new System.EventHandler(this.button9_Click);
+            this.tableLayoutPanel1.SetColumnSpan(this.flowLayoutPanel1, 13);
+            this.flowLayoutPanel1.Controls.Add(this.accountPage2);
+            this.flowLayoutPanel1.Controls.Add(this.homePage2);
+            this.flowLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.flowLayoutPanel1.Location = new System.Drawing.Point(3, 249);
+            this.flowLayoutPanel1.Name = "flowLayoutPanel1";
+            this.tableLayoutPanel1.SetRowSpan(this.flowLayoutPanel1, 9);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(1951, 732);
+            this.flowLayoutPanel1.TabIndex = 28;
+            // 
+            // homePage2
+            // 
+            this.homePage2.Location = new System.Drawing.Point(6, 751);
+            this.homePage2.Margin = new System.Windows.Forms.Padding(6);
+            this.homePage2.Name = "homePage2";
+            this.homePage2.Size = new System.Drawing.Size(1956, 733);
+            this.homePage2.TabIndex = 0;
+            // 
+            // accountPage2
+            // 
+            this.accountPage2.Location = new System.Drawing.Point(6, 6);
+            this.accountPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.accountPage2.Name = "accountPage2";
+            this.accountPage2.Size = new System.Drawing.Size(1956, 733);
+            this.accountPage2.TabIndex = 1;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(984, 561);
+            this.ClientSize = new System.Drawing.Size(1957, 1073);
             this.Controls.Add(this.tableLayoutPanel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedToolWindow;
+            this.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.MaximizeBox = false;
+            this.MaximumSize = new System.Drawing.Size(1983, 1144);
+            this.MinimumSize = new System.Drawing.Size(1983, 1144);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "J3I Store";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.panel6.ResumeLayout(false);
             this.panel6.PerformLayout();
-            this.panel1.ResumeLayout(false);
+            this.flowLayoutPanel1.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -402,6 +454,9 @@ namespace AppStoreNET
         private AccountPage accountPage1;
         private Product product1;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
+        private homePage homePage2;
+        private AccountPage accountPage2;
     }
 }
 
