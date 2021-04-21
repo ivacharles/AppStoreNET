@@ -15,7 +15,7 @@ namespace AppStoreNET
     public partial class Product : UserControl
     {
         SqlConnection connection;
-        SqlCommand insCommmand;
+        SqlCommand insCommmand, sqlCommand;
         SqlDataAdapter myAdapter;
         DataTable dataTable;
 
@@ -36,24 +36,52 @@ namespace AppStoreNET
 
                 pictPath = openFileDialog.FileName;
                 pictName = Path.GetFileName(openFileDialog.FileName);
-
-                File.Copy(pictPath, $"{destinationPath}{pictName}", true);
                 pictureBox1.ImageLocation = pictPath;
             }
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            Console.WriteLine("path = "+pictPath + "picName = " + pictName + "titleTextBox = " + titleTextBox.Text + "productDescBox = " + productDescBox.Text + "categoryBox2 = " + categoryBox2.Text + "priceBox = " + priceBox.Text);
-            if (!pictPath.Equals("") && !pictName.Equals("") && !titleTextBox.Text.Equals("") && !productDescBox.Text.Equals("") && !categoryBox2.Text.Equals("") && priceBox.Text.Equals(""))
+            
+
+            if (!pictPath.Equals("") && !pictName.Equals("") && !titleTextBox.Text.Equals("") && !productDescBox.Text.Equals("") && !categoryBox2.Text.Equals("") && !priceBox.Text.Equals(""))
             {
+                PersitProduct(titleTextBox.Text, productDescBox.Text, categoryBox2.Text, priceBox.Text, pictPath, pictName);
                 MessageBox.Show("Everything is ok here inside of the save method iva ");
-                PersitProduct(titleTextBox.Text, productDescBox.Text, categoryBox2.Text, priceBox.Text);
+
             }
         }
 
 
-        private void PersitProduct(String pName, String pDesc, String pCategory, String pPrice)
+        private void PersitProduct(String pName, String pDesc, String pCategory, String pPrice, String iPath, String iName)
+        {
+            //Establish a connection
+            connection = new SqlConnection();
+            connection.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\less7\\source\\repos\\AppStoreNET\\AppStoreDatabase.mdf;Integrated Security=True";
+            connection.Open();
+            MessageBox.Show("connection open");
+            //create sql access request
+            //insert command
+            myAdapter = new SqlDataAdapter();
+            insCommmand = new SqlCommand();
+            insCommmand.Connection = connection;
+            insCommmand.CommandText = "Insert into product (productName, productDesc, productCategory, productPrice, imgPath,imgName ) Values(@pName, @pDesc, @pCategory, @pPrice, @iPath, iName)";
+            insCommmand.Parameters.AddWithValue("@pName", pName);
+            insCommmand.Parameters.AddWithValue("@pDesc", pDesc);
+            insCommmand.Parameters.AddWithValue("@pCategory", pCategory);
+            insCommmand.Parameters.AddWithValue("@pPrice", pPrice);
+            insCommmand.Parameters.AddWithValue("@iPath", iPath);
+            insCommmand.Parameters.AddWithValue("@iName", iName);
+
+            myAdapter.InsertCommand = insCommmand;
+
+            //copy image and past to the app 
+            File.Copy(pictPath, $"{destinationPath}{pictName}", true);
+
+            MessageBox.Show("Title: " + pName + " Desc: " + pDesc + " Category: " + pCategory + " Price: " + pPrice+"Path: "+pictPath);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
             //Establish a connection
             connection = new SqlConnection();
@@ -61,17 +89,19 @@ namespace AppStoreNET
             connection.Open();
 
             //create sql access request
-            //insert command
-            myAdapter = new SqlDataAdapter();
-            insCommmand = new SqlCommand();
-            insCommmand.Connection = connection;
-            insCommmand.CommandText = "Insert into product (productName, productDesc, productCategory, productPrice) Values(@productName, @productDesc, @productCategory, @productPrice)";
-            insCommmand.Parameters.AddWithValue("@productName", pName);
-            insCommmand.Parameters.AddWithValue("@productDesc", pDesc);
-            insCommmand.Parameters.AddWithValue("@productCategory", pCategory);
-            insCommmand.Parameters.AddWithValue("@productPrice", pPrice);
+            sqlCommand = new SqlCommand();
+            sqlCommand.Connection = connection; //connect sqlCommand with the database
+            sqlCommand.CommandText = "Select * from Product";
 
-            myAdapter.InsertCommand = insCommmand;
+            // give command to a messenger, that will return the data and put it to the data table
+            myAdapter = new SqlDataAdapter(); //create the Adapter 
+            myAdapter.SelectCommand = sqlCommand;// connect it with the Sqlcommand
+            dataTable = new DataTable(); // create a dataTable
+            myAdapter.Fill(dataTable); // make adpter fill the datatable
+
+            //bind the dataTablle with the gridView GUI
+            dataGrid4productView.AutoGenerateColumns = false;
+            dataGrid4productView.DataSource = dataTable;
         }
     }
 }
