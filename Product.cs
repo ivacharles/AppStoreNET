@@ -37,6 +37,7 @@ namespace AppStoreNET
                 pictPath = openFileDialog.FileName;
                 pictName = Path.GetFileName(openFileDialog.FileName);
                 pictureBox1.ImageLocation = pictPath;
+
             }
         }
 
