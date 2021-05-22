@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,14 @@ namespace AppStoreNET
 {
     public partial class Form1 : Form
     {
+        public static List<productList> cart;
+        public static int cartCount;
+        public static DataTable dataTable;
+
+        SqlConnection connection;
+        SqlCommand insCommmand, sqlCommand;
+        SqlDataAdapter myAdapter;
+
         public Form1()
         {
             InitializeComponent();
@@ -56,6 +65,11 @@ namespace AppStoreNET
             cpuPage1.Hide();
             homePage2.Show();
             homePage2.BringToFront();
+
+            dataTable = GetProducts();
+            cart = new List<productList>();
+            linkLabel1.Text = "(" + cart.Count + ") " + "Cart";
+
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -69,6 +83,8 @@ namespace AppStoreNET
             laptopPage2.Hide();
             homePage2.Show();
             homePage2.BringToFront();
+            linkLabel1.Text = "(" + cart.Count + ") " + "Cart";
+
         }
 
         private void button2_Click_1(object sender, EventArgs e)
@@ -148,5 +164,36 @@ namespace AppStoreNET
             laptopPage2.Hide();
             miscPage1.BringToFront();
         }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            linkLabel1.Text = "(" + cart.Count + ") " + "Cart";
+
+        }
+
+        private DataTable GetProducts()
+        {
+            DataTable dataTable = new DataTable();
+
+            //Establish a connection
+            connection = new SqlConnection();
+            connection.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\less7\\source\\repos\\AppStoreNET\\AppStoreDatabase.mdf;Integrated Security=True";
+            connection.Open();
+
+            //create sql access request
+            sqlCommand = new SqlCommand();
+            sqlCommand.Connection = connection; //connect sqlCommand with the database
+            sqlCommand.CommandText = "Select * from Product";
+
+            // give command to a messenger, that will return the data and put it to the data table
+            myAdapter = new SqlDataAdapter(); //create the Adapter 
+            myAdapter.SelectCommand = sqlCommand;// connect it with the Sqlcommand
+            dataTable = new DataTable(); // create a dataTable
+            myAdapter.Fill(dataTable); // make adpter fill the datatable
+
+            return dataTable;
+        }
+
+
     }
 }

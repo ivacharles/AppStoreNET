@@ -47,6 +47,8 @@ namespace AppStoreNET
             this.button8 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
+            this.miscPage1 = new AppStoreNET.MiscPage();
+            this.desktopPage1 = new AppStoreNET.DesktopPage();
             this.cpuPage1 = new AppStoreNET.CPUPage();
             this.motherboardPage1 = new AppStoreNET.MotherboardPage();
             this.memoryRam1 = new AppStoreNET.MemoryRam();
@@ -57,8 +59,6 @@ namespace AppStoreNET
             this.homePage1 = new AppStoreNET.homePage();
             this.accountPage1 = new AppStoreNET.AccountPage();
             this.product1 = new AppStoreNET.Product();
-            this.desktopPage1 = new AppStoreNET.DesktopPage();
-            this.miscPage1 = new AppStoreNET.MiscPage();
             this.tableLayoutPanel1.SuspendLayout();
             this.panel6.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -225,6 +225,7 @@ namespace AppStoreNET
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "Cart";
             this.linkLabel1.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // button2
             // 
@@ -380,6 +381,20 @@ namespace AppStoreNET
             this.flowLayoutPanel1.Size = new System.Drawing.Size(1951, 732);
             this.flowLayoutPanel1.TabIndex = 28;
             // 
+            // miscPage1
+            // 
+            this.miscPage1.Location = new System.Drawing.Point(0, 252);
+            this.miscPage1.Name = "miscPage1";
+            this.miscPage1.Size = new System.Drawing.Size(1945, 732);
+            this.miscPage1.TabIndex = 7;
+            // 
+            // desktopPage1
+            // 
+            this.desktopPage1.Location = new System.Drawing.Point(8, 258);
+            this.desktopPage1.Name = "desktopPage1";
+            this.desktopPage1.Size = new System.Drawing.Size(1945, 732);
+            this.desktopPage1.TabIndex = 6;
+            // 
             // cpuPage1
             // 
             this.cpuPage1.Location = new System.Drawing.Point(0, 250);
@@ -406,16 +421,20 @@ namespace AppStoreNET
             // 
             // laptopPage2
             // 
+            this.laptopPage2.AutoScroll = true;
+            this.laptopPage2.BackColor = System.Drawing.Color.DarkKhaki;
             this.laptopPage2.Location = new System.Drawing.Point(0, 254);
-            this.laptopPage2.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.laptopPage2.Margin = new System.Windows.Forms.Padding(6);
             this.laptopPage2.Name = "laptopPage2";
             this.laptopPage2.Size = new System.Drawing.Size(1956, 733);
             this.laptopPage2.TabIndex = 2;
             // 
             // laptopPage1
             // 
+            this.laptopPage1.AutoScroll = true;
+            this.laptopPage1.BackColor = System.Drawing.Color.DarkKhaki;
             this.laptopPage1.Location = new System.Drawing.Point(6, 1496);
-            this.laptopPage1.Margin = new System.Windows.Forms.Padding(6, 6, 6, 6);
+            this.laptopPage1.Margin = new System.Windows.Forms.Padding(6);
             this.laptopPage1.Name = "laptopPage1";
             this.laptopPage1.Size = new System.Drawing.Size(1956, 733);
             this.laptopPage1.TabIndex = 1;
@@ -459,20 +478,6 @@ namespace AppStoreNET
             this.product1.Name = "product1";
             this.product1.Size = new System.Drawing.Size(978, 381);
             this.product1.TabIndex = 2;
-            // 
-            // desktopPage1
-            // 
-            this.desktopPage1.Location = new System.Drawing.Point(8, 258);
-            this.desktopPage1.Name = "desktopPage1";
-            this.desktopPage1.Size = new System.Drawing.Size(1945, 732);
-            this.desktopPage1.TabIndex = 6;
-            // 
-            // miscPage1
-            // 
-            this.miscPage1.Location = new System.Drawing.Point(0, 252);
-            this.miscPage1.Name = "miscPage1";
-            this.miscPage1.Size = new System.Drawing.Size(1945, 732);
-            this.miscPage1.TabIndex = 7;
             // 
             // Form1
             // 

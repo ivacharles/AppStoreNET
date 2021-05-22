@@ -47,8 +47,24 @@ namespace AppStoreNET
 
             if (!pictPath.Equals("") && !pictName.Equals("") && !titleTextBox.Text.Equals("") && !productDescBox.Text.Equals("") && !categoryBox2.Text.Equals("") && !priceBox.Text.Equals(""))
             {
-                PersitProduct(titleTextBox.Text, productDescBox.Text, categoryBox2.Text, priceBox.Text, pictPath, pictName);
-                MessageBox.Show("Everything is ok here inside of the save method iva ");
+                //Establish a connection
+                connection = new SqlConnection();
+                connection.ConnectionString = "Data Source=(LocalDB)\\MSSQLLocalDB;AttachDbFilename=C:\\Users\\less7\\source\\repos\\AppStoreNET\\AppStoreDatabase.mdf;Integrated Security=True";
+                connection.Open();
+
+                //myAdapter = new SqlDataAdapter();
+                insCommmand = connection.CreateCommand();
+                insCommmand.CommandType = CommandType.Text;
+               // insCommmand.Connection = connection;
+                insCommmand.CommandText = "Insert into product (productName, productDesc, productCategory, productPrice, imgPath,imgName ) Values('" + titleTextBox.Text + "', '" + productDescBox.Text + "', '" + categoryBox2.Text + "', '" + priceBox.Text + "', '" + pictPath + "', '" + pictName + "');";
+                insCommmand.ExecuteNonQuery();
+                //myAdapter.InsertCommand = insCommmand;
+                //copy image and past to the app 
+                File.Copy(pictPath, $"{destinationPath}{pictName}", true);
+
+
+
+                //MessageBox.Show("Everything is ok here inside of the save method iva ");
 
             }
         }
@@ -66,13 +82,13 @@ namespace AppStoreNET
             myAdapter = new SqlDataAdapter();
             insCommmand = new SqlCommand();
             insCommmand.Connection = connection;
-            insCommmand.CommandText = "Insert into product (productName, productDesc, productCategory, productPrice, imgPath,imgName ) Values(@pName, @pDesc, @pCategory, @pPrice, @iPath, iName)";
-            insCommmand.Parameters.AddWithValue("@pName", pName);
-            insCommmand.Parameters.AddWithValue("@pDesc", pDesc);
-            insCommmand.Parameters.AddWithValue("@pCategory", pCategory);
-            insCommmand.Parameters.AddWithValue("@pPrice", pPrice);
-            insCommmand.Parameters.AddWithValue("@iPath", iPath);
-            insCommmand.Parameters.AddWithValue("@iName", iName);
+            //insCommmand.CommandText = "Insert into product (productName, productDesc, productCategory, productPrice, imgPath,imgName ) Values('"+pName+"', '"+pDesc+"', '"+pCategory+"', '"+pPrice+"', '"+iPath+"', '"+iName)";
+            //insCommmand.Parameters.AddWithValue("@pName", pName);
+            //insCommmand.Parameters.AddWithValue("@pDesc", pDesc);
+            //insCommmand.Parameters.AddWithValue("@pCategory", pCategory);
+            //insCommmand.Parameters.AddWithValue("@pPrice", pPrice);
+            //insCommmand.Parameters.AddWithValue("@iPath", iPath);
+            //insCommmand.Parameters.AddWithValue("@iName", iName);
 
             myAdapter.InsertCommand = insCommmand;
 
